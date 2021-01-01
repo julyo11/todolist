@@ -5,7 +5,7 @@ const todoList = document.querySelector('.todo-list');
 const filterOption = document.querySelector('.filter-todo');
 
 // Event Listeners
-document.addEventListener('DOMCOntentLoaded', getTodos);
+document.addEventListener('DOMContentLoaded', getTodos);
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
 filterOption.addEventListener('click', filterTodo);
@@ -34,7 +34,7 @@ function addTodo(event) {
   completedButton.classList.add('complete-btn');
   todoDiv.appendChild(completedButton);
 
-  // Check TraSH Button
+  // Check Trash Button
   const trashButton = document.createElement('button');
   trashButton.innerHTML = '<i class="fas fa-trash"></i>';
   trashButton.classList.add('trash-btn');
@@ -117,6 +117,7 @@ function getTodos() {
   else {
     todos = JSON.parse(localStorage.getItem('todos'));
   }
+
   todos.forEach(function (todo) {
   // Todo Div
   const todoDiv = document.createElement('div');
@@ -134,7 +135,7 @@ function getTodos() {
   completedButton.classList.add('complete-btn');
   todoDiv.appendChild(completedButton);
 
-  // Check TraSH Button
+  // Check Trash Button
   const trashButton = document.createElement('button');
   trashButton.innerHTML = '<i class="fas fa-trash"></i>';
   trashButton.classList.add('trash-btn');
